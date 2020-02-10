@@ -44,7 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let navLinks = document.querySelectorAll("nav a");
 
 for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
+  navLinks[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
 }
 
 let navImg = document.querySelector('header img');
@@ -84,11 +84,14 @@ bottomContent[4].textContent = siteContent['main-content']['vision-h4'];
 bottomContent[5].textContent = siteContent['main-content']['vision-content'];
 
 let contact = document.querySelectorAll('.contact *');
+contact.forEach((tag, i) => tag.textContent = siteContent.contact[Object.keys(siteContent.contact)[i]])
 
-contact[0].textContent = siteContent['contact']['contact-h4'];
-contact[1].textContent = siteContent['contact']['address'];
-contact[2].textContent = siteContent['contact']['phone'];
-contact[3].textContent = siteContent['contact']['email'];
+
+
+// contact[0].textContent = siteContent['contact']['contact-h4'];
+// contact[1].textContent = siteContent['contact']['address'];
+// contact[2].textContent = siteContent['contact']['phone'];
+// contact[3].textContent = siteContent['contact']['email'];
 
 let footer = document.querySelector('footer p');
 
@@ -97,3 +100,17 @@ footer.textContent = siteContent.footer.copyright;
 for (let i = 0; i < navLinks.length; i++) {
   navLinks[i].style.color = 'green';
 }
+
+let teamAnchor = document.createElement('a');
+let sitemapAnchor = document.createElement('a');
+
+teamAnchor.textContent = 'Team';
+teamAnchor.style.color = 'green';
+sitemapAnchor.textContent = 'Sitemap';
+sitemapAnchor.style.color = 'green';
+
+let nav = document.querySelector('nav');
+
+nav.prepend(teamAnchor);
+nav.appendChild(sitemapAnchor);
+
