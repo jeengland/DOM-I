@@ -40,3 +40,60 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navLinks = document.querySelectorAll("nav a");
+
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
+}
+
+let navImg = document.querySelector('header img');
+
+navImg.src = siteContent.nav['img-src'];
+
+let ctaHeader = document.querySelector('.cta h1');
+
+ctaHeader.textContent = siteContent.cta.h1;
+
+let ctaButton = document.querySelector('.cta button');
+
+ctaButton.textContent = siteContent.cta.button;
+
+let ctaImage = document.querySelector('.cta img');
+
+ctaImage.src = siteContent.cta['img-src'];
+
+let topContent = document.querySelectorAll('.top-content div *');
+
+topContent[0].textContent = siteContent['main-content']['features-h4'];
+topContent[1].textContent = siteContent['main-content']['features-content'];
+topContent[2].textContent = siteContent['main-content']['about-h4'];
+topContent[3].textContent = siteContent['main-content']['about-content'];
+
+let middleImg = document.querySelector('.middle-img');
+
+middleImg.src = siteContent['main-content']['middle-img-src'];
+
+let bottomContent = document.querySelectorAll('.bottom-content div *');
+
+bottomContent[0].textContent = siteContent['main-content']['services-h4'];
+bottomContent[1].textContent = siteContent['main-content']['services-content'];
+bottomContent[2].textContent = siteContent['main-content']['product-h4'];
+bottomContent[3].textContent = siteContent['main-content']['product-content'];
+bottomContent[4].textContent = siteContent['main-content']['vision-h4'];
+bottomContent[5].textContent = siteContent['main-content']['vision-content'];
+
+let contact = document.querySelectorAll('.contact *');
+
+contact[0].textContent = siteContent['contact']['contact-h4'];
+contact[1].textContent = siteContent['contact']['address'];
+contact[2].textContent = siteContent['contact']['phone'];
+contact[3].textContent = siteContent['contact']['email'];
+
+let footer = document.querySelector('footer p');
+
+footer.textContent = siteContent.footer.copyright;
+
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].style.color = 'green';
+}
